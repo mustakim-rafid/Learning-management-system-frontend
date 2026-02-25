@@ -25,62 +25,119 @@ const LoginForm = ({ redirect }: { redirect: string }) => {
     }
   }, [state]);
 
+  const fillDemo = (email: string, password: string) => {
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password",
+    ) as HTMLInputElement;
+
+    if (emailInput && passwordInput) {
+      emailInput.value = email;
+      passwordInput.value = password;
+    }
+  };
+
   return (
-    <form action={formAction}>
-      <input type="hidden" name="redirect" value={redirect} />
-      <FieldGroup>
-        <Field>
-          <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="m@example.com"
-            defaultValue={state?.formData?.email || ""}
-          />
-          <InputFieldError field="email" state={state} />
-        </Field>
-        <Field>
-          <div className="flex items-center">
-            <FieldLabel htmlFor="password">Password</FieldLabel>
-            <a
-              href="#"
-              className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-            >
-              Forgot your password?
-            </a>
-          </div>
-          <div className="relative">
+    <>
+      <form action={formAction}>
+        <input type="hidden" name="redirect" value={redirect} />
+        <FieldGroup>
+          <Field>
+            <FieldLabel htmlFor="email">Email</FieldLabel>
             <Input
-              id="password"
-              name="password"
-              type={showPassword ? "text" : "password"}
-              placeholder="******"
-              className="pr-10"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="m@example.com"
+              defaultValue={state?.formData?.email || ""}
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
-            >
-              {showPassword ? <EyeIcon size={18} /> : <EyeOffIcon size={18} />}
-            </button>
-          </div>
-          <InputFieldError field="password" state={state} />
-        </Field>
-        <Field>
-          <Button type="submit" disabled={pending} className="cursor-pointer">
-            {pending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Login"}
-          </Button>
-          <FieldDescription className="text-center">
-            Don&apos;t have an account? <Link href="/register">Sign up</Link>
-          </FieldDescription>
-          <FieldDescription className="text-center">
-            <Link href="/">Back to Home</Link>
-          </FieldDescription>
-        </Field>
-      </FieldGroup>
-    </form>
+            <InputFieldError field="email" state={state} />
+          </Field>
+
+          <Field>
+            <div className="flex items-center">
+              <FieldLabel htmlFor="password">Password</FieldLabel>
+              <a
+                href="#"
+                className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+              >
+                Forgot your password?
+              </a>
+            </div>
+            <div className="relative">
+              <Input
+                id="password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="******"
+                className="pr-10"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+              >
+                {showPassword ? (
+                  <EyeIcon size={18} />
+                ) : (
+                  <EyeOffIcon size={18} />
+                )}
+              </button>
+            </div>
+            <InputFieldError field="password" state={state} />
+          </Field>
+
+          {/* Demo Login Buttons */}
+          <Field>
+            <div className="grid gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  fillDemo("superadmin@mail.com", "superadmin123")
+                }
+              >
+                Quick Login - Super Admin
+              </Button>
+
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  fillDemo("student1@mail.com", "123456")
+                }
+              >
+                Quick Login - Student
+              </Button>
+
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  fillDemo("i1@mail.com", "123456")
+                }
+              >
+                Quick Login - Instructor
+              </Button>
+            </div>
+          </Field>
+
+          <Field>
+            <Button type="submit" disabled={pending} className="cursor-pointer">
+              {pending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Login"}
+            </Button>
+
+            <FieldDescription className="text-center">
+              Don&apos;t have an account? <Link href="/register">Sign up</Link>
+            </FieldDescription>
+
+            <FieldDescription className="text-center">
+              <Link href="/">Back to Home</Link>
+            </FieldDescription>
+          </Field>
+        </FieldGroup>
+      </form>
+    </>
   );
 };
 

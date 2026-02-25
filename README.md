@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Learning Management System (LMS) – Frontend
 
-## Getting Started
+This is the **frontend application** for the **Learning Management System (LMS)**.  
+It provides a user-friendly interface for **Super Admin**, **Admin**, **Instructors**, and **Students** to manage courses, lessons, enrollments, and payments.  
+The frontend interacts seamlessly with the backend API to deliver a smooth and interactive learning experience.
 
-First, run the development server:
+---
+
+## 🚀 Project Overview
+
+The frontend is built with **Next.js 16**, offering a modern, performant, and SEO-friendly framework for server-side rendering and client-side interactivity.  
+Users can register, login, browse courses, enroll, watch lessons, and track progress according to their roles.
+
+Key highlights:
+
+- **Dynamic role-based interface** for Super Admin, Admin, Instructor, and Student  
+- **Secure JWT-based authentication**  
+- **Responsive design** for desktop and mobile  
+- **Real-time interaction** with backend API  
+
+---
+
+## 🔍 Features Overview
+
+### 🔐 Authentication & User Roles
+- Login, logout, and token refresh  
+- Role-based routing and component rendering  
+- Protected routes for Super Admin, Admin, Instructor, and Student  
+
+### 👤 User Management
+- Profile viewing and editing  
+- Profile avatar upload  
+- Super Admin/Admin user management interface  
+
+### 📚 Course & Lesson Management
+- Instructors can create, update, delete, and publish courses  
+- Upload course thumbnails and lesson videos  
+- View lessons by course  
+- Students can view enrolled courses and lesson content  
+
+### 📖 Enrollment & Payment
+- Students can enroll in courses  
+- Secure payment flow for course enrollment  
+- Track lesson completion and course progress  
+
+### 📊 Dashboard & Analytics
+- **Super Admin Dashboard:** system-wide metrics and user stats  
+- **Admin Dashboard:** manage categories, courses, and users  
+- **Instructor Dashboard:** course performance, enrollments, and earnings  
+- **Student Dashboard:** enrolled courses and progress  
+
+---
+
+## 🧰 Technology Stack
+
+- **Next.js 16** – React framework for server-side rendering and routing  
+- **TypeScript** – Strong typing for better code quality and maintainability  
+- **Tailwind CSS** – Utility-first CSS framework for responsive styling  
+- **ShadCN UI** – Accessible prebuilt component library  
+- **JWT Authentication** – Secure login and session management  
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/mustakim-rafid/Learning-management-system-frontend.git
+cd Learning-management-system-frontend
+```
+
+### 2. Install dependencies
+```
+npm install
+# or if using pnpm
+pnpm install
+# or bun
+bun add
+```
+
+### 3. Create a .env file in the root directory:
+```
+NEXT_PUBLIC_BASE_API_URL=
+
+# jwt secrets
+ACCESS_TOKEN_SECRET=
+REFRESH_TOKEN_SECRET=
+```
+
+### 4. Run the development server
+```
 npm run dev
-# or
-yarn dev
 # or
 pnpm dev
 # or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Build for production
+```
+npm run build
+npm start
+```
+---
+## Thanks.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

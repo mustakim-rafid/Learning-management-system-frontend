@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 interface ManagementPageHeaderProps {
   title: string;
-  description: string;
+  description?: string;
   action?: {
     icon?: LucideIcon;
     label: string;

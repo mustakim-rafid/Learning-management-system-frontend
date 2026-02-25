@@ -67,7 +67,7 @@ export const studentNavMainItems: INavMain[] = [
     items: [
       {
         title: "My Courses",
-        url: "/student/dashboard/my-courses",
+        url: "/dashboard/my-courses",
       },
       {
         title: "Explore Courses",
@@ -94,21 +94,6 @@ export const getCommonNavMainItemsByRole = (
         {
           title: "Overview",
           url: getDefaultDashboardRoute(userRole),
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      icon: "Settings",
-      isActive: false,
-      items: [
-        {
-          title: "My Profile",
-          url: "/my-profile",
-        },
-        {
-          title: "Change Password",
-          url: "/change-password",
         },
       ],
     },

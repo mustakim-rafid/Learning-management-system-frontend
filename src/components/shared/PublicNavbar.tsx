@@ -30,11 +30,7 @@ export async function PublicNavbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Explore Tours", href: "/tours" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-    { label: "FAQ", href: "/frequently-asked-questions" },
-    { label: "Policy", href: "/policy" },
+    { label: "Explore Courses", href: "/courses" },
     ...(decodedToken
       ? [
           {

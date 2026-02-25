@@ -7,8 +7,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import DashboardSidebar from "@/components/modules/dashboard/DashboardSidebar";
 import DashboardNavbar from "@/components/modules/dashboard/DashboardNavbar";
+import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata:Metadata = {
+  title: "EduFlow - Dashboard"
+}
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
