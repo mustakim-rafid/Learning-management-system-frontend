@@ -94,16 +94,6 @@ const LoginForm = ({ redirect }: { redirect: string }) => {
                 type="button"
                 variant="outline"
                 onClick={() =>
-                  fillDemo("superadmin@mail.com", "superadmin123")
-                }
-              >
-                Quick Login - Super Admin
-              </Button>
-
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() =>
                   fillDemo("student1@mail.com", "123456")
                 }
               >
